@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--
+    mapper映射文件，为dao层接口提供sql语句执行，
+    这种方式避免了对jdbc的操作，因为mybatis帮我们自动做了一切
+-->
+<mapper namespace="org.seckill.dao.SeckillDao">
+    <!--<![CDATA[ 这里面提供不被xml解析的字符串 ]]>-->
+    <!--减少库存操作-->
+    <update id="reduceNumber">
+        UPDATE seckill
+        SET number = number - 1
+        WHERE seckill_id = #{seckillId}
+              AND number > 0
+              AND start_time <![CDATA[ <= ]]> #{killTime}
+              AND end_time >= #{killTime};
+    </update>
+
+    <!--查询单个商品信息-->
+    <select id="queryById" parameterType="long" resultType="Seckill">
+        SELECT *
+        FROM seckill
+        WHERE seckill_id = #{seckillId}
+    </select>
+
+    <!--查询商品列表-->
+    <select id="queryAll" resultType="Seckill">
+        SELECT *
+        FROM seckill
+        ORDER BY create_time DESC
+        LIMIT #{offset}, #{limit}
+    </select>
+</mapper>
