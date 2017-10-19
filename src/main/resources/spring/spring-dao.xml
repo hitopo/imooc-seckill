@@ -5,25 +5,30 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
+
     <!--配置整合mybatis-->
     <!--1.配置数据库参数-->
     <context:property-placeholder location="classpath:jdbc.properties"/>
     <!--2.数据库连接池 c3p0-->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <!--配置连接池信息-->
-        <property name="driverClass" value="${driver}"/>
-        <property name="jdbcUrl" value="${url}"/>
-        <property name="user" value="${username}"/>
-        <property name="password" value="${password}"/>
+        <!--
+            这里一定要注意jdbc.properties中属性最好加上jdbc前缀
+            否则有可能会自动引用系统的名称或者驱动
+        -->
+        <property name="driverClass" value="${jdbc.driver}"/>
+        <property name="jdbcUrl" value="${jdbc.url}"/>
+        <property name="user" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
         <!--配置私有属性-->
         <property name="maxPoolSize" value="30"/>
         <property name="minPoolSize" value="3"/>
         <!--关闭连接之后不自动提交-->
         <property name="autoCommitOnClose" value="false"/>
         <!--配置连接超时时间-->
-        <property name="checkoutTimeout" value="1000"/>
+        <property name="checkoutTimeout" value="30000"/>
         <!--获取链接失败重试的次数-->
-        <property name="acquireRetryAttempts" value="2"/>
+        <property name="acquireRetryAttempts" value="5"/>
     </bean>
 
     <!--3.配置sqlSessionFactory-->
