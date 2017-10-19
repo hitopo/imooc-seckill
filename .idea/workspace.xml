@@ -1,23 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e906d083-89ae-427e-97de-43036b9e9278" name="Default" comment="完成秒杀系统Dao层设计编码和测试">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/test/java/org/seckill/dao/SuccessKilledDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/seckill/dao/SeckillDao.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/dao/SeckillDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/org/seckill/dao/SuccessKilledDao.class" afterPath="$PROJECT_DIR$/target/classes/org/seckill/dao/SuccessKilledDao.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/test-classes/org/seckill/dao/SeckillDaoTest.class" afterPath="$PROJECT_DIR$/target/test-classes/org/seckill/dao/SeckillDaoTest.class" />
+    <list default="true" id="e906d083-89ae-427e-97de-43036b9e9278" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/seckill.iml" afterPath="$PROJECT_DIR$/seckill.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/seckill/dao/SeckillDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/dao/SeckillDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/org/seckill/dao/SuccessKilledDao.java" afterPath="$PROJECT_DIR$/src/main/java/org/seckill/dao/SuccessKilledDao.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/jdbc.properties" afterPath="$PROJECT_DIR$/src/main/resources/jdbc.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/mapper/SuccessKilledDao.xml" afterPath="$PROJECT_DIR$/src/main/resources/mapper/SuccessKilledDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" afterPath="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/java/org/seckill/dao/SeckillDaoTest.java" afterPath="$PROJECT_DIR$/src/test/java/org/seckill/dao/SeckillDaoTest.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/jdbc.properties" afterPath="$PROJECT_DIR$/target/classes/jdbc.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/mapper/SuccessKilledDao.xml" afterPath="$PROJECT_DIR$/target/classes/mapper/SuccessKilledDao.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/spring/spring-dao.xml" afterPath="$PROJECT_DIR$/target/classes/spring/spring-dao.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -69,13 +55,12 @@
       <file leaf-file-name="SuccessKilledDao.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SuccessKilledDao.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="440">
-              <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+            <state relative-caret-position="1628">
+              <caret line="37" column="47" lean-forward="true" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
               <folding>
-                <marker date="1508422842757" expanded="true" signature="430:542" ph="INSERT IGNOR... success_killed" />
-                <marker date="1508422842757" expanded="true" signature="747:1288" ph="SELECT sk.se... success_killed" />
-                <marker date="1508422842757" expanded="true" signature="747:1303" ph="SELECT sk.se... success_killed" />
-                <marker date="1508422842757" expanded="true" signature="2291:2882" ph="SELECT sk.se... success_killed" />
+                <marker date="1508423236652" expanded="true" signature="430:542" ph="INSERT IGNOR... success_killed" />
+                <marker date="1508423236652" expanded="true" signature="710:1298" ph="SELECT sk.se... success_killed" />
+                <marker date="1508423236652" expanded="true" signature="710:1313" ph="SELECT sk.se... success_killed" />
               </folding>
             </state>
           </provider>
@@ -186,8 +171,8 @@
         <option value="$PROJECT_DIR$/src/test/java/org/seckill/dao/SeckillDaoTest.java" />
         <option value="$PROJECT_DIR$/src/test/java/org/seckill/dao/SuccessKilledDaoTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/org/seckill/dao/SuccessKilledDao.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/mapper/SuccessKilledDao.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/spring/spring-dao.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/mapper/SuccessKilledDao.xml" />
       </list>
     </option>
   </component>
@@ -354,7 +339,7 @@
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/test/java" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="SearchEverywhereHistoryKey" value="web.xml&#9;FILE&#9;file://E:/ideaProjects/seckill/src/main/webapp/WEB-INF/web.xml" />
+    <property name="SearchEverywhereHistoryKey" value="todo&#9;ACTION&#9;ActivateTODOToolWindow&#10;web.xml&#9;FILE&#9;file://E:/ideaProjects/seckill/src/main/webapp/WEB-INF/web.xml" />
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
@@ -618,17 +603,19 @@
       <workItem from="1508315363869" duration="5118000" />
       <workItem from="1508393738513" duration="4658000" />
       <workItem from="1508401982828" duration="3716000" />
-      <workItem from="1508420452846" duration="2535000" />
+      <workItem from="1508420452846" duration="2766000" />
     </task>
+    <task id="LOCAL-00001" summary="完成秒杀系统Dao层设计编码和测试">
+      <created>1508423026895</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1508423026895</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="SuccessKilledDaoTest_queryByidWithSeckill - 2017.10.19 at 21h 52m 09s.xml">
-      <configuration name="SuccessKilledDaoTest.queryByidWithSeckill" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="SuccessKilledDaoTest_queryByidWithSeckill - 2017.10.19 at 21h 56m 26s.xml">
-      <configuration name="SuccessKilledDaoTest.queryByidWithSeckill" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="SuccessKilledDaoTest_queryByidWithSeckill - 2017.10.19 at 21h 58m 41s.xml">
       <configuration name="SuccessKilledDaoTest.queryByidWithSeckill" configurationId="JUnit" />
     </history-entry>
@@ -653,9 +640,15 @@
     <history-entry file="SuccessKilledDaoTest_queryByidWithSeckill - 2017.10.19 at 22h 16m 40s.xml">
       <configuration name="SuccessKilledDaoTest.queryByidWithSeckill" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="SuccessKilledDaoTest_queryByidWithSeckill - 2017.10.19 at 22h 26m 09s.xml">
+      <configuration name="SuccessKilledDaoTest.queryByidWithSeckill" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="SuccessKilledDaoTest_queryByidWithSeckill - 2017.10.19 at 22h 27m 21s.xml">
+      <configuration name="SuccessKilledDaoTest.queryByidWithSeckill" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16027000" />
+    <option name="totallyTimeSpent" value="16258000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -688,6 +681,7 @@
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="JRebel" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -699,7 +693,6 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.588585" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -732,10 +725,9 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1508422842757" expanded="true" signature="430:542" ph="INSERT IGNOR... success_killed" />
-            <marker date="1508422842757" expanded="true" signature="747:1288" ph="SELECT sk.se... success_killed" />
-            <marker date="1508422842757" expanded="true" signature="747:1303" ph="SELECT sk.se... success_killed" />
-            <marker date="1508422842757" expanded="true" signature="2291:2882" ph="SELECT sk.se... success_killed" />
+            <marker date="1508423236652" expanded="true" signature="430:542" ph="INSERT IGNOR... success_killed" />
+            <marker date="1508423236652" expanded="true" signature="710:1298" ph="SELECT sk.se... success_killed" />
+            <marker date="1508423236652" expanded="true" signature="710:1313" ph="SELECT sk.se... success_killed" />
           </folding>
         </state>
       </provider>
@@ -966,6 +958,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="516">
           <caret line="222" column="0" lean-forward="false" selection-start-line="222" selection-start-column="0" selection-end-line="222" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1018,13 +1011,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/mapper/SuccessKilledDao.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="37" column="14" lean-forward="true" selection-start-line="37" selection-start-column="14" selection-end-line="37" selection-end-column="14" />
+        <state relative-caret-position="1628">
+          <caret line="37" column="47" lean-forward="true" selection-start-line="37" selection-start-column="47" selection-end-line="37" selection-end-column="47" />
           <folding>
-            <marker date="1508422842757" expanded="true" signature="430:542" ph="INSERT IGNOR... success_killed" />
-            <marker date="1508422842757" expanded="true" signature="747:1288" ph="SELECT sk.se... success_killed" />
-            <marker date="1508422842757" expanded="true" signature="747:1303" ph="SELECT sk.se... success_killed" />
-            <marker date="1508422842757" expanded="true" signature="2291:2882" ph="SELECT sk.se... success_killed" />
+            <marker date="1508423236652" expanded="true" signature="430:542" ph="INSERT IGNOR... success_killed" />
+            <marker date="1508423236652" expanded="true" signature="710:1298" ph="SELECT sk.se... success_killed" />
+            <marker date="1508423236652" expanded="true" signature="710:1313" ph="SELECT sk.se... success_killed" />
           </folding>
         </state>
       </provider>
@@ -1097,7 +1089,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
-          <last-edited>Maven: junit:junit:3.8.1</last-edited>
+          <last-edited>Maven: ch.qos.logback:logback-classic:1.1.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
