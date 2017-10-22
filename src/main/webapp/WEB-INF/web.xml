@@ -4,5 +4,24 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
          http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
-  <!--修改servlet web.xml版本为3.1-->
+    <!--修改servlet web.xml版本为3.1-->
+    <!--配置DispatcherServlet-->
+    <servlet>
+        <servlet-name>seckill-dispatcherservlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <!--配置springMVC需要加载的配置文件-->
+        <!--
+            spring-dao.xml,spring-service.xml
+            Mybatis->springMVC->spring
+        -->
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:spring/spring-*.xml</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <!--默认匹配所有的请求-->
+        <servlet-name>seckill-dispatcherservlet</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
 </web-app>

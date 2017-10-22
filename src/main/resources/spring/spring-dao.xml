@@ -3,7 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd">
 
 
     <!--配置整合mybatis-->
@@ -22,7 +24,7 @@
         <property name="password" value="${jdbc.password}"/>
         <!--配置私有属性-->
         <property name="maxPoolSize" value="30"/>
-        <property name="minPoolSize" value="3"/>
+        <property name="minPoolSize" value="10"/>
         <!--关闭连接之后不自动提交-->
         <property name="autoCommitOnClose" value="false"/>
         <!--配置连接超时时间-->
