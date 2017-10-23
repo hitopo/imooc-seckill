@@ -4,23 +4,74 @@
 var seckill = {
     // 封装秒杀业务传递的url
     URL: {
+        //获取服务器时间url
         now: function () {
             return "/seckill/time/now";
+        },
+        //获取秒杀接口url
+        exposer: function (seckillId) {
+            return "/seckill/" + seckillId + "/exposer";
+        },
+        //执行秒杀操作url
+        execution: function (seckillId, md5) {
+            return "/seckill/" + seckillId + "/" + md5 + "/execution";
         }
     },
     //验证手机号
     validatePhone: function (phone) {
         //isNaN()返回的是传递的参数不是数字
-        if (phone && phone.length == 11 && !isNaN(phone)) {
-            return true;
-        } else {
-            return false;
-        }
+        return !!(phone && phone.length === 11 && !isNaN(phone));
     },
     //执行秒杀操作
     handleSeckill: function (seckillId, node) {
         //将节点隐藏，并将按钮安装在里面
-
+        //在节点中添加按钮
+        node.hide().html('<button class="btn btn-primary btn-lg" id="killBtn">开始秒杀</button>');
+        //获取秒杀接口md5
+        $.post(seckill.URL.exposer(seckillId), {}, function (result) {
+            //回调函数
+            if (result && result['success']) {
+                var exposer = result['data'];
+                if (exposer['exposed']) {
+                    //开启秒杀
+                    //获取秒杀接口
+                    var md5 = exposer['md5'];
+                    //获取秒杀地址
+                    var killUrl = seckill.URL.execution(seckillId, md5);
+                    console.log("killUrl:" + killUrl);  //todo
+                    //绑定点击事件
+                    //只绑定一次，防止用户多次点击发送大量请求给服务器
+                    //造成服务器宕机
+                    $('#killBtn').one('click', function () {
+                        //执行秒杀操作
+                        $.post(killUrl, {}, function (result) {
+                            if (result && result['success']) {
+                                var killResult = result['data'];
+                                var stateInfo = killResult['stateInfo'];
+                                //显示秒杀结果
+                                if(stateInfo === "秒杀成功"){
+                                    node.html('<span class="label label-success">' + stateInfo + '</span>');
+                                } else {
+                                    node.html('<span class="label label-danger">' + stateInfo + '</span>');
+                                }
+                            }
+                        });
+                    });
+                    //显示保存好信息的结点
+                    node.show();
+                } else {
+                    //还未开启秒杀
+                    var now = exposer['now'];
+                    var start = exposer['start'];
+                    var end = exposer['end'];
+                    //重新进行计时逻辑
+                    seckill.countdown(seckillId, now, start, end);
+                }
+            } else {
+                //获取秒杀接口失败
+                console.log("result:" + result);  //todo
+            }
+        });
     },
     //计时交互
     countdown: function (seckillId, nowTime, startTime, endTime) {

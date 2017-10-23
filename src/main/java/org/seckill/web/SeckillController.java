@@ -38,13 +38,14 @@ public class SeckillController {
     //这里seckillId使用的是Long而不是long，是因为数据绑定是不传seckillId
     //Long->null   long->报错
     @RequestMapping(value = "/{seckillId}/detail", method = RequestMethod.GET)
-    public String detail(@PathVariable("seckillId") Long seckillId, Model model) {
+    public String detail(@PathVariable(value = "seckillId") Long seckillId, Model model) {
         if (seckillId == null) {
             return "redirect:/seckill/list";
         }
         Seckill seckill = seckillService.getById(seckillId);
         if (seckill == null) {
-            //id是乱传的
+            //id是传递不正确
+            //仍然是数字
             return "redirect:/seckill/list";
         }
         model.addAttribute("seckill", seckill);
@@ -54,11 +55,12 @@ public class SeckillController {
     //ajax处理
     //produces->指定返回类型，并解决乱码问题
     @RequestMapping(value = "/{seckillId}/exposer",
-            method = RequestMethod.GET,
+            method = RequestMethod.POST,
             produces = "application/json;charst=UTF-8")
     @ResponseBody
+    //分页
     //指定返回的类型为json
-    public SeckillResult<Exposer> exposer(@PathVariable("seckillId") Long seckillId) {
+    public SeckillResult<Exposer> exposer(@PathVariable(value = "seckillId") Long seckillId) {
         SeckillResult<Exposer> result;
         try {
             Exposer exposer = seckillService.exportSeckillUrl(seckillId);
@@ -76,32 +78,32 @@ public class SeckillController {
             produces = "application/json;charset=UTF-8")
     @ResponseBody
     public SeckillResult<SeckillExecution> execute(@PathVariable("seckillId") Long seckillId,
-                                                  @PathVariable("md5") String md5,
-                                                  @CookieValue(value = "killPhone", required = false) Long phone) {
+                                                   @PathVariable("md5") String md5,
+                                                   @CookieValue(value = "killPhone", required = false) Long phone) {
         //也可以使用spring验证
         if (phone == null) {
-            return new SeckillResult<SeckillExecution>(false, "未注册");
+            return new SeckillResult<SeckillExecution>(true, "未注册");
         }
         try {
             SeckillExecution seckillExecution = seckillService.executeSeckill(seckillId, phone, md5);
             return new SeckillResult<SeckillExecution>(true, seckillExecution);
         } catch (RepeatException e) {
             SeckillExecution seckillExecution = new SeckillExecution(seckillId, SeckillStateEnum.REPEAT_KILL);
-            return new SeckillResult<SeckillExecution>(false, seckillExecution);
+            return new SeckillResult<SeckillExecution>(true, seckillExecution);
         } catch (SeckillCloseException e) {
             SeckillExecution seckillExecution = new SeckillExecution(seckillId, SeckillStateEnum.END);
-            return new SeckillResult<SeckillExecution>(false, seckillExecution);
+            return new SeckillResult<SeckillExecution>(true, seckillExecution);
         } catch (Exception e) {
             SeckillExecution seckillExecution = new SeckillExecution(seckillId, SeckillStateEnum.INNER_ERROR);
-            return new SeckillResult<SeckillExecution>(false, seckillExecution);
+            return new SeckillResult<SeckillExecution>(true, seckillExecution);
         }
     }
 
     //获取系统时间
-    @RequestMapping(value = "/time/now",method = RequestMethod.GET)
+    @RequestMapping(value = "/time/now", method = RequestMethod.GET)
     @ResponseBody
     public SeckillResult<Long> time() {
         Date now = new Date();
-        return new SeckillResult<Long>(true,now.getTime());
+        return new SeckillResult<Long>(true, now.getTime());
     }
 }
